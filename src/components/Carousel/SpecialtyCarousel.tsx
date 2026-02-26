@@ -52,27 +52,27 @@ export default function SpecialtyCarousel({ items }: Props) {
             offset === 0
               ? styles.center
               : offset === -1
-              ? styles.left1
-              : offset === 1
-              ? styles.right1
-              : offset === -2
-              ? styles.left2
-              : offset === 2
-              ? styles.right2
-              : styles.hidden
+                ? styles.left1
+                : offset === 1
+                  ? styles.right1
+                  : offset === -2
+                    ? styles.left2
+                    : offset === 2
+                      ? styles.right2
+                      : styles.hidden
 
           return (
             <div
               key={item.id}
-              className={`${styles.slot} ${positionClass} ${
-                isVisible ? styles.visible : styles.hidden
-              }`}
+              className={`${styles.slot} ${positionClass} ${isVisible ? styles.visible : styles.hidden
+                }`}
               style={{ zIndex: 10 - Math.abs(offset) }}
             >
               <Card
                 image={item.image}
                 title={item.title}
                 description={item.description}
+                isBlurred={Math.abs(offset) > 1}
               />
             </div>
           )
@@ -80,11 +80,15 @@ export default function SpecialtyCarousel({ items }: Props) {
       </div>
 
       <div className={styles.controls}>
-        <button onClick={prev} className={styles.arrow}>
-          ←
+        <button onClick={prev} className={styles.arrow} aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
-        <button onClick={next} className={styles.arrow}>
-          →
+        <button onClick={next} className={styles.arrow} aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
       </div>
     </div>

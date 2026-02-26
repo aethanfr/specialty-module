@@ -20,10 +20,20 @@ export async function fetchNews(): Promise<SpecialtyItem[]> {
 
   const data = await response.json()
 
-  return data.articles.map((article: any, index: number) => ({
-    id: String(index),
-    title: article.title ?? "No title available",
-    description: article.description ?? "No description available",
-    image: article.urlToImage ?? "/placeholder.png",
-  }))
+  return data.articles.map(
+    (
+      article: {
+        url?: string
+        title?: string
+        description?: string
+        urlToImage?: string
+      },
+      index: number
+    ) => ({
+      id: article.url || String(index),
+      title: article.title ?? "No title available",
+      description: article.description ?? "No description available",
+      image: article.urlToImage ?? "/placeholder.png",
+    })
+  )
 }

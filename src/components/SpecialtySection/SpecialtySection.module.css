@@ -7,6 +7,7 @@
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 16px;
 }
 
 .title {
@@ -23,24 +24,4 @@
 
 .bold {
   font-weight: 600;
-}
-
-.carouselWrapper {
-  display: flex;
-  justify-content: center;
-  gap: 36px;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
 }

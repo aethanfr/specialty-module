@@ -1,7 +1,17 @@
 import styles from "./SpecialtySection.module.css"
-import Card from "@/components/Card/Card"
+import SpecialtyCarousel from "@/components/Carousel/SpecialtyCarousel"
+import { fetchNews } from "@/lib/news"
+import { SpecialtyItem } from "@/types/specialty"
 
-export default function SpecialtySection() {
+export default async function SpecialtySection() {
+  let items: SpecialtyItem[] = []
+
+  try {
+    items = await fetchNews()
+  } catch {
+    items = []
+  }
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -10,27 +20,9 @@ export default function SpecialtySection() {
           <br />
           <span className={styles.bold}>Specialty Of Us?</span>
         </h2>
-
-        <div className={styles.carouselWrapper}>
-          <Card
-            image="/icon-4.png"
-            title="Augmented Reality"
-            description="We have the better team to develop all kind of augmented reality designs and takes the experience to other level"
-          />
-
-          <Card
-            image="/icon-4.png"
-            title="Quick Response"
-            description="Anytime you want to talk we are going to be there for you"
-          />
-
-          <Card
-            image="/icon-4.png"
-            title="Great Communication"
-            description="We maintain 24/7 communication to cover all your need for the project"
-          />
-        </div>
       </div>
+
+      <SpecialtyCarousel items={items} />
     </section>
   )
 }

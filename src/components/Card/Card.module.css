@@ -1,0 +1,42 @@
+.card {
+  width: 422px;
+  height: 532px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px rgba(153, 153, 153, 0.2);
+  text-align: center;
+  padding-top: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 254px;
+  height: 255px;
+  border-radius: 127px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+  color: #222222;
+  margin-bottom: 20px;
+}
+
+.description {
+  width: 314px; 
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #666666;
+}

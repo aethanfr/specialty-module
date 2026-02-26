@@ -1,0 +1,47 @@
+.section {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 43px;
+  line-height: 55px;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.light {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.carouselWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
